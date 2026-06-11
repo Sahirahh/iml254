@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Origin</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap');
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+body{
+background:linear-gradient(180deg,#fff6fb,#f6f0ff);
+min-height:100vh;
+color:#6b5b7a;
+overflow-x:hidden;
+}
+.container{
+width:90%;
+max-width:1000px;
+margin:40px auto;
+}
+.title{
+text-align:center;
+margin-bottom:35px;
+}
+.title h1{
+font-size:55px;
+color:#c79dff;
+text-shadow:4px 4px #ffb6d9;
+letter-spacing:2px;
+}
+.title p{
+font-family:'Pacifico',cursive;
+font-size:40px;
+color:#ff5f9e;
+margin-top:-12px;
+}
+.origin-card{
+background:#f8ebe3;
+border-radius:35px;
+padding:25px;
+box-shadow:10px 10px 0 #d7d0ff;
+position:relative;
+margin-bottom:35px;
+}
+.origin-card::before{
+content:'';
+width:80px;
+height:20px;
+background:#ffb6c1;
+position:absolute;
+top:-10px;
+left:50%;
+transform:translateX(-50%) rotate(-3deg);
+border-radius:5px;
+}
+.flag-box{
+text-align:center;
+margin-bottom:25px;
+}
+.flag-box img{
+width:300px;
+height:180px;
+object-fit:cover;
+border-radius:18px;
+border:5px solid white;
+box-shadow:0 5px 12px rgba(0,0,0,0.15);
+}
+.flag-box h2{
+margin-top:15px;
+color:#ff5f9e;
+font-size:28px;
+}
+.flag-box p{
+font-size:15px;
+line-height:1.8;
+margin-top:10px;
+}
+.info-gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+.info-card{
+background:white;
+padding:18px;
+border-radius:25px;
+box-shadow:6px 6px 0 #ffd6ea;
+transition:0.3s;
+cursor:pointer;
+}
+.info-card:hover{
+transform:translateY(-6px) rotate(-1deg);
+}
+.info-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:18px;
+border:4px solid #ffd6e5;
+}
+.info-card h2{
+text-align:center;
+color:#ff5f9e;
+font-size:24px;
+margin-top:15px;
+}
+.info-card p{
+text-align:center;
+font-size:14px;
+line-height:1.7;
+margin-top:10px;
+}
+.family-note{
+background:#fff;
+border-radius:25px;
+padding:25px;
+margin-top:30px;
+box-shadow:6px 6px 0 #ffd6ea;
+border:3px dashed #ffb6d9;
+text-align:center;
+}
+.family-note h2{
+color:#ff5f9e;
+font-size:26px;
+margin-bottom:12px;
+}
+.family-note p{
+font-size:15px;
+line-height:1.8;
+}
+.school-link{
+display:block;
+text-align:center;
+margin-top:15px;
+text-decoration:none;
+background:#ff8fc2;
+color:white;
+padding:10px 20px;
+border-radius:25px;
+font-weight:bold;
+box-shadow:4px 4px 0 #d7d0ff;
+}
+.school-link:hover{
+background:#ff6ba9;
+}
+.button{
+text-align:center;
+margin-top:40px;
+}
+.button a{
+display:inline-block;
+padding:13px 30px;
+background:#ff8fc2;
+color:white;
+text-decoration:none;
+border-radius:25px;
+font-weight:bold;
+box-shadow:5px 5px 0 #d7d0ff;
+}
+.button a:hover{
+background:#ff6ba9;
+}
+.doodle{
+position:fixed;
+font-size:42px;
+z-index:-1;
+}
+.d1{
+top:160px;
+left:40px;
+}
+.d2{
+top:240px;
+right:50px;
+}
+.d3{
+bottom:120px;
+left:60px;
+}
+.d4{
+bottom:130px;
+right:60px;
+}
+.active{
+transform:scale(1.04);
+}
+@media(max-width:768px){
+.title h1{
+font-size:40px;
+}
+.title p{
+font-size:30px;
+}
+.info-gallery{
+grid-template-columns:1fr;
+}
+.flag-box img{
+width:100%;
+}
+.info-card img{
+height:260px;
+}
+}
+</style>
+</head>
+<body>
+<div class="doodle d1">🌸</div>
+<div class="doodle d2">✨</div>
+<div class="doodle d3">💗</div>
+<div class="doodle d4">📍</div>
+<div class="container">
+<div class="title">
+<h1>MY ORIGIN</h1>
+<p>where my story begins</p>
+</div>
+<div class="origin-card">
+<div class="flag-box">
+<img src="Image/kelate.jpeg" alt="My State Flag">
+<h2>My State Flag ♡</h2>
+<p>
+This is the flag of my state, the place where I come from and where many of my memories begin.
+</p>
+</div>
+<div class="info-gallery">
+<div class="info-card">
+<img src="Image/hopi.jpeg" alt="My Birth Hospital">
+<h2>My Birth Hospital 🏥</h2>
+<p>
+This is the hospital where I was born. It is a special place because it marks the beginning of my life journey.
+</p>
+</div>
+<div class="info-card">
+<img src="Image/logo.jpeg" alt="My School Logo">
+<h2>My School Logo 🎓</h2>
+<p>
+This is my school logo, which reminds me of my school memories, teachers, friends, and the place where I learned many things.
+</p>
+<a href="https://youtube.com/@tvpsssmkseriintan2492?si=R0iRT6O92I7CgcHo" target="_blank" class="school-link">Visit My School Youtube Channel</a>
+</div>
+</div>
+<div class="family-note">
+<h2>My Family Origin 🌸</h2>
+<p>
+One interesting story about my family origin is that my great grandmother was actually Japanese. However, after the war, they got divorced.
+</p>
+</div>
+</div>
+<div class="button">
+<a href="aboutme.html">🏠 BACK HOME</a>
+</div>
+</div>
+<script>
+const cards=document.querySelectorAll(".info-card");
+cards.forEach(card=>{
+card.addEventListener("click",()=>{
+card.classList.toggle("active");
+});
+});
+</script>
+</body>
+</html>

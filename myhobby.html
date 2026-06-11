@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Hobby</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#fff6fb,#f6f0ff);
+min-height:100vh;
+color:#6b5b7a;
+overflow-x:hidden;
+}
+
+.menu{
+text-align:center;
+padding:25px;
+}
+
+.menu a{
+text-decoration:none;
+color:#7d7337;
+margin:0 18px;
+font-size:14px;
+font-weight:bold;
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:40px auto;
+}
+
+.title{
+text-align:center;
+margin-bottom:35px;
+}
+
+.title h1{
+font-size:58px;
+color:#c79dff;
+text-shadow:3px 3px #ffb6d9;
+}
+
+.title p{
+font-family:'Pacifico',cursive;
+font-size:42px;
+color:#ff5f9e;
+margin-top:-15px;
+}
+
+.hobby-gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.hobby-card{
+background:#f8ebe3;
+padding:20px;
+border-radius:30px;
+box-shadow:8px 8px 0px #d7d0ff;
+position:relative;
+transition:0.3s;
+cursor:pointer;
+}
+
+.hobby-card::before{
+content:'';
+width:65px;
+height:18px;
+background:#ffb6c1;
+position:absolute;
+top:-10px;
+left:50%;
+transform:translateX(-50%) rotate(-3deg);
+border-radius:5px;
+}
+
+.hobby-card:hover{
+transform:translateY(-8px) rotate(-1deg);
+}
+
+.hobby-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:20px;
+border:5px solid white;
+}
+
+.hobby-card h2{
+text-align:center;
+margin-top:15px;
+color:#ff5f9e;
+font-size:24px;
+}
+
+.hobby-card p{
+text-align:center;
+margin-top:10px;
+line-height:1.7;
+font-size:14px;
+}
+
+.button{
+text-align:center;
+margin-top:40px;
+}
+
+.button a{
+display:inline-block;
+padding:13px 30px;
+background:#ff8fc2;
+color:white;
+text-decoration:none;
+border-radius:25px;
+font-weight:bold;
+box-shadow:5px 5px 0px #d7d0ff;
+}
+
+.button a:hover{
+background:#ff6ba9;
+}
+
+.doodle{
+position:fixed;
+font-size:40px;
+z-index:-1;
+}
+
+.d1{
+top:180px;
+left:30px;
+}
+
+.d2{
+right:40px;
+top:230px;
+}
+
+.d3{
+left:50px;
+bottom:100px;
+}
+
+.d4{
+right:60px;
+bottom:130px;
+}
+
+.active{
+transform:scale(1.05);
+}
+
+@media(max-width:900px){
+
+.hobby-gallery{
+grid-template-columns:1fr;
+}
+
+.title h1{
+font-size:42px;
+}
+
+.title p{
+font-size:32px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="menu">
+<a href="home.html">HOME</a>
+<a href="aboutme.html">ABOUT ME</a>
+<a href="myfamily.html">MY FAMILY</a>
+<a href="myfriends.html">MY FRIENDS</a>
+<a href="myfavoritefoods.html">MY FAVORITE FOODS</a>
+<a href="myfavoritesongs.html">MY FAVORITE SONGS</a>
+</div>
+
+<div class="doodle d1">🎀</div>
+<div class="doodle d2">✨</div>
+<div class="doodle d3">🌸</div>
+<div class="doodle d4">🩷</div>
+
+<div class="container">
+
+<div class="title">
+<h1>MY HOBBY</h1>
+<p>things I love doing</p>
+</div>
+
+<div class="hobby-gallery">
+
+<div class="hobby-card">
+<img src="Image/hobby1.jpeg" alt="">
+<h2>Watching Movies 🎬</h2>
+<p>
+I love spending my free time watching movies and discovering new stories and characters.
+</p>
+</div>
+
+<div class="hobby-card">
+<img src="Image/hobby2.jpeg" alt="">
+<h2>Listening to Music 🎧</h2>
+<p>
+Music helps me relax, focus on my studies and express my emotions whenever I feel stressed.
+</p>
+</div>
+
+<div class="hobby-card">
+<img src="Image/hobby3.jpeg" alt="">
+<h2>Sleeping📸</h2>
+<p>
+I enjoy taking a nap whenever I feel sad, depressed, and worry.
+</p>
+</div>
+
+</div>
+
+<div class="button">
+<a href="aboutme.html">🏠 BACK HOME</a>
+</div>
+
+</div>
+
+<script>
+
+const cards=document.querySelectorAll(".hobby-card");
+
+cards.forEach(card=>{
+
+card.addEventListener("click",()=>{
+
+card.classList.toggle("active");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

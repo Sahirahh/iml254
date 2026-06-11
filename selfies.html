@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Selfies Collection</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#fff5fb,#f4ecff);
+min-height:100vh;
+padding:30px;
+color:#5a3d63;
+}
+
+.container{
+width:90%;
+max-width:1000px;
+margin:auto;
+text-align:center;
+}
+
+.title{
+font-size:38px;
+margin-bottom:30px;
+color:#ff6fae;
+text-shadow:3px 3px #ffd6ea;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+
+.photo{
+background:#fff;
+padding:12px;
+border-radius:25px;
+box-shadow:8px 8px 0 #d7d0ff;
+border:3px solid #ffd6ea;
+transition:0.3s;
+}
+
+.photo:hover{
+transform:translateY(-8px) rotate(-1deg);
+}
+
+.photo img{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:18px;
+}
+
+.photo p{
+margin-top:10px;
+font-size:14px;
+color:#6b5b7a;
+}
+
+.sticker{
+position:fixed;
+font-size:35px;
+z-index:-1;
+}
+
+.star{
+top:80px;
+left:80px;
+}
+
+.heart{
+top:150px;
+right:100px;
+}
+
+.flower{
+bottom:80px;
+left:120px;
+}
+
+.button{
+display:inline-block;
+margin-top:35px;
+padding:12px 30px;
+background:#ff8fc2;
+color:white;
+text-decoration:none;
+border-radius:25px;
+font-weight:bold;
+box-shadow:4px 4px 0 #d7d0ff;
+}
+
+.button:hover{
+background:#ff6ba9;
+}
+
+@media(max-width:768px){
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.photo img{
+height:350px;
+}
+
+.title{
+font-size:30px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="title">My Selfies Collections ✨</h1>
+
+<div class="sticker star">⭐</div>
+<div class="sticker heart">💗</div>
+<div class="sticker flower">🌸</div>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="Image/memo1.jpeg" alt="">
+<p>Me, on the first day of Hari Raya Aidilfitri, testing my new hijab</p>
+</div>
+
+<div class="photo">
+<img src="Image/memo2.jpeg" alt="">
+<p>The last class in my semester</p>
+</div>
+
+<div class="photo">
+<img src="Image/memo3.jpeg" alt="">
+<p>Went out shopping!!!</p>
+</div>
+
+<div class="photo">
+<img src="Image/memo4.jpeg" alt="">
+<p>My favorite hijab</p>
+</div>
+
+</div>
+
+<a href="aboutme.html" class="button">Back to About Me</a>
+
+</div>
+
+<script>
+const photos=document.querySelectorAll(".photo");
+
+photos.forEach(photo=>{
+photo.addEventListener("click",()=>{
+photo.classList.toggle("active");
+});
+});
+</script>
+
+</body>
+</html>

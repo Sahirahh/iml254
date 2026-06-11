@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Family</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:linear-gradient(180deg,#fef6f8,#f6f0ff);
+    font-family:'Poppins',sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:40px;
+}
+
+/* Scrapbook Page */
+
+.scrapbook{
+    width:1100px;
+    min-height:900px;
+    background:#d9bf9b;
+    background-image:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 25%),
+    radial-gradient(circle at 90% 90%, rgba(255,255,255,0.08) 0%, transparent 25%);
+    border-radius:20px;
+    position:relative;
+    overflow:hidden;
+    padding:40px;
+    box-shadow:12px 12px 0px #d7d0ff;
+}
+
+/* Torn Paper Effect */
+
+.scrapbook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:40px;
+    background:#e8d3ba;
+    clip-path:polygon(0 0,100% 0,100% 60%,95% 50%,90% 65%,85% 45%,80% 60%,75% 40%,70% 55%,65% 35%,60% 55%,55% 35%,50% 60%,45% 40%,40% 60%,35% 45%,30% 65%,25% 50%,20% 65%,15% 45%,10% 60%,5% 45%,0 60%);
+}
+
+/* Main Grid */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-top:30px;
+}
+
+/* Photos */
+
+.photo{
+    background:white;
+    padding:6px;
+    border:3px solid #fff;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.photo:hover{
+    transform:scale(1.05);
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.small{
+    height:120px;
+}
+
+.medium{
+    height:200px;
+}
+
+.large{
+    height:300px;
+}
+
+/* Title */
+
+.family-title{
+    position:absolute;
+    top:420px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:'Pacifico',cursive;
+    font-size:55px;
+    color:white;
+    text-shadow:2px 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Decorative Elements */
+
+.airplane{
+    position:absolute;
+    right:60px;
+    bottom:200px;
+    font-size:90px;
+    opacity:0.8;
+}
+
+.building-left{
+    position:absolute;
+    bottom:0;
+    left:0;
+    font-size:140px;
+}
+
+.building-right{
+    position:absolute;
+    bottom:0;
+    right:0;
+    font-size:140px;
+}
+
+.sticker{
+    position:absolute;
+    font-size:60px;
+}
+
+.s1{
+    top:80px;
+    left:60px;
+}
+
+.s2{
+    bottom:120px;
+    left:300px;
+}
+
+.s3{
+    top:250px;
+    right:80px;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.gallery{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.family-title{
+    position:relative;
+    top:auto;
+    left:auto;
+    transform:none;
+    text-align:center;
+    margin:30px 0;
+}
+
+.scrapbook{
+    width:100%;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="scrapbook">
+
+<div class="sticker s1">🤎</div>
+<div class="sticker s2">✨</div>
+<div class="sticker s3">🌸</div>
+
+<div class="gallery">
+
+<div class="photo large">
+<img src="Image/mother.jpeg">
+</div>
+
+<div class="photo large">
+<img src="Image/father.jpeg">
+</div>
+
+<div class="photo large">
+<img src="Image/big.jpeg">
+</div>
+
+<div class="photo large">
+<img src="Image/family4.jpeg">
+</div>
+
+<div class="photo medium">
+<img src="Image/family5.jpeg">
+</div>
+
+<div class="photo medium">
+<img src="Image/small.jpeg">
+</div>
+
+<div class="photo medium">
+<img src="Image/family7.jpeg">
+</div>
+
+<div class="photo medium">
+<img src="Image/family8.jpeg">
+</div>
+
+<div class="photo large">
+<img src="Image/family9.jpeg">
+</div>
+
+<div class="photo large">
+<img src="Image/family10.jpeg">
+</div>
+
+<div class="photo large">
+<img src="Image/family11.jpeg">
+</div>
+
+<div class="photo large">
+<img src="Image/rightsmall.jpeg">
+</div>
+
+</div>
+
+<div class="building-left">🏛️</div>
+<div class="building-center">🏰</div>
+
+</div>
+
+</body>
+</html>

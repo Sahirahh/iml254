@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Favorite Songs</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f7efe8;
+padding:30px;
+display:flex;
+justify-content:center;
+}
+
+.container{
+width:850px;
+}
+
+.player-card{
+background:#f5e3d9;
+padding:25px;
+border-radius:25px;
+border:2px solid #6d4c57;
+box-shadow:0 8px 0 #ff7ecf,0 15px 0 #8c52ff;
+}
+
+.title{
+text-align:center;
+font-size:22px;
+margin-bottom:20px;
+color:#5a2d42;
+}
+
+.player-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.song-info h2{
+margin:10px 0;
+color:#4a2535;
+}
+
+.song-info p{
+color:#7a6670;
+}
+
+.album-art{
+width:250px;
+height:180px;
+border-radius:20px;
+background:linear-gradient(135deg,#ffcce6,#f7d6ff,#fff0f6);
+border:2px solid #7b5365;
+}
+
+.controls{
+margin-top:20px;
+}
+
+.controls button{
+padding:10px 15px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+margin-right:10px;
+}
+
+.playlist-card{
+margin-top:40px;
+background:#f5e3d9;
+padding:25px;
+border-radius:25px;
+border:2px solid #6d4c57;
+box-shadow:0 8px 0 #ff7ecf,0 15px 0 #8c52ff;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.song{
+display:flex;
+align-items:center;
+gap:15px;
+background:white;
+padding:12px;
+border-radius:15px;
+cursor:pointer;
+}
+
+.song img{
+width:70px;
+height:70px;
+border-radius:10px;
+object-fit:cover;
+}
+
+.song span{
+margin-left:auto;
+font-size:20px;
+}
+
+@media(max-width:768px){
+
+.player-content{
+flex-direction:column;
+gap:20px;
+}
+
+.album-art{
+width:100%;
+}
+
+.container{
+width:100%;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="player-card">
+
+<p class="title">♡ Love Music</p>
+
+<div class="player-content">
+
+<div class="song-info">
+
+<small>My Favorite Playlist</small>
+
+<h2 id="songTitle">UNETHICAL</h2>
+
+<p id="artistName">Faouzia</p>
+
+<audio id="audioPlayer" controls></audio>
+
+<div class="controls">
+<button id="prevBtn">⏮</button>
+<button id="playBtn">▶</button>
+<button id="nextBtn">⏭</button>
+</div>
+
+</div>
+
+<div class="album-art"></div>
+
+</div>
+
+</div>
+
+<div class="playlist-card">
+
+<div class="song" onclick="changeSong(0)">
+<img src="https://picsum.photos/80?1">
+<div>
+<h4>UNETHICAL</h4>
+<p>Faouzia</p>
+</div>
+<span>♥</span>
+</div>
+
+<div class="song" onclick="changeSong(1)">
+<img src="https://picsum.photos/80?2">
+<div>
+<h4>ESPRESSO</h4>
+<p>Sabrina Carpenter</p>
+</div>
+<span>♥</span>
+</div>
+
+<div class="song" onclick="changeSong(2)">
+<img src="https://picsum.photos/80?3">
+<div>
+<h4>Be Kind</h4>
+<p>Halsey</p>
+</div>
+<span>♥</span>
+</div>
+
+<div class="song" onclick="changeSong(3)">
+<img src="https://picsum.photos/80?4">
+<div>
+<h4>Without You</h4>
+<p>G-Dragon feat Rose</p>
+</div>
+<span>♥</span>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const songs = [
+
+{
+title:"UNETHICAL",
+artist:"Faouzia",
+file:"mp3 song/UNETHICAL.mp3"
+},
+
+{
+title:"ESPRESSO",
+artist:"Sabrina Carpenter",
+file:"mp3 song/ESPRESSO.mp3"
+},
+
+{
+title:"Be Kind",
+artist:"Halsey",
+file:"mp3 song/Bekind.mp3"
+},
+
+{
+title:"Without You",
+artist:"G-Dragon feat Rose",
+file:"mp3 song/Withoutyou.mp3"
+}
+
+];
+
+let currentSong = 0;
+
+const audio = document.getElementById("audioPlayer");
+const playBtn = document.getElementById("playBtn");
+const songTitle = document.getElementById("songTitle");
+const artistName = document.getElementById("artistName");
+
+audio.src = songs[0].file;
+
+function changeSong(index){
+
+currentSong = index;
+
+audio.src = songs[index].file;
+
+songTitle.textContent = songs[index].title;
+
+artistName.textContent = songs[index].artist;
+
+audio.play();
+
+playBtn.textContent = "⏸";
+
+}
+
+playBtn.addEventListener("click",()=>{
+
+if(audio.paused){
+
+audio.play();
+
+playBtn.textContent = "⏸";
+
+}else{
+
+audio.pause();
+
+playBtn.textContent = "▶";
+
+}
+
+});
+
+document.getElementById("nextBtn").addEventListener("click",()=>{
+
+currentSong++;
+
+if(currentSong >= songs.length){
+
+currentSong = 0;
+
+}
+
+changeSong(currentSong);
+
+});
+
+document.getElementById("prevBtn").addEventListener("click",()=>{
+
+currentSong--;
+
+if(currentSong < 0){
+
+currentSong = songs.length - 1;
+
+}
+
+changeSong(currentSong);
+
+});
+
+audio.addEventListener("ended",()=>{
+
+currentSong++;
+
+if(currentSong >= songs.length){
+
+currentSong = 0;
+
+}
+
+changeSong(currentSong);
+
+});
+
+</script>
+
+</body>
+</html>
