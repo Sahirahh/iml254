@@ -6,7 +6,6 @@
 <title>My Favorite Videos</title>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap');
 
 *{
@@ -50,7 +49,7 @@ margin-top:-10px;
 
 .video-gallery{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(2,1fr);
 gap:30px;
 }
 
@@ -86,12 +85,14 @@ padding:10px;
 border-radius:20px;
 }
 
-video{
+video,
+iframe{
 width:100%;
-height:420px;
+height:360px;
 object-fit:cover;
 border-radius:15px;
 border:4px solid #ffd6e5;
+display:block;
 }
 
 .video-card h2{
@@ -164,8 +165,9 @@ transform:scale(1.03);
 grid-template-columns:1fr;
 }
 
-video{
-height:500px;
+video,
+iframe{
+height:420px;
 }
 
 .title h1{
@@ -177,7 +179,6 @@ font-size:30px;
 }
 
 }
-
 </style>
 </head>
 
@@ -198,53 +199,37 @@ font-size:30px;
 <div class="video-gallery">
 
 <div class="video-card">
-
-<a href="https://youtube.com/shorts/3F2QX9e0V20?si=d1tQ3WhuDQzlDWaj" target="_blank">watch my video</a>
-<h2>Wishing my mom birthday 💗</h2>
-
-<p>
-A video that reminds me of emotional moments and beautiful memories that I will always cherish.
-</p>
-
+<div class="video-box">
+<iframe src="https://www.youtube.com/embed/3F2QX9e0V20" title="Wishing my mom birthday" frameborder="0" allowfullscreen></iframe>
+</div>
+<h2>Wishing My Mom Birthday 💗</h2>
+<p>A video that reminds me of emotional moments and beautiful memories that I will always cherish.</p>
 </div>
 
-
 <div class="video-card">
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XxFP3n-Ikho?si=QVtOqG73-t4Y7_KW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="video-box">
+<iframe src="https://www.youtube.com/embed/XxFP3n-Ikho" title="Galau Moments" frameborder="0" allowfullscreen></iframe>
+</div>
 <h2>Galau Moments 💗</h2>
-
-<p>
-A video that reminds me of emotional moments and beautiful memories that I will always cherish.
-</p>
-
+<p>A video that reminds me of emotional moments and beautiful memories that I will always cherish.</p>
 </div>
 
 <div class="video-card">
-
 <div class="video-box">
 <video controls>
 <source src="Video/kitty.mp4" type="video/mp4">
 </video>
 </div>
-
 <h2>Cute Kitty 🐱</h2>
-
-<p>
-Cats always make me smile. This is one of my favorite videos whenever I need happiness.
-</p>
-
+<p>Cats always make me smile. This is one of my favorite videos whenever I need happiness.</p>
 </div>
 
 <div class="video-card">
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8x3CLjAiGQc?si=F5RawD2FuXeE2BLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="video-box">
+<iframe src="https://www.youtube.com/embed/8x3CLjAiGQc" title="No Money" frameborder="0" allowfullscreen></iframe>
+</div>
 <h2>No Money 😂</h2>
-
-<p>
-A funny video that never fails to make me laugh no matter how many times I watch it.
-</p>
-
+<p>A funny video that never fails to make me laugh no matter how many times I watch it.</p>
 </div>
 
 </div>
@@ -256,39 +241,25 @@ A funny video that never fails to make me laugh no matter how many times I watch
 </div>
 
 <script>
-
 const cards=document.querySelectorAll(".video-card");
 
 cards.forEach(card=>{
-
 card.addEventListener("click",()=>{
-
 card.classList.toggle("active");
-
 });
-
 });
 
 const videos=document.querySelectorAll("video");
 
 videos.forEach(video=>{
-
 video.addEventListener("play",()=>{
-
 videos.forEach(v=>{
-
 if(v!==video){
-
 v.pause();
-
 }
-
 });
-
 });
-
 });
-
 </script>
 
 </body>
